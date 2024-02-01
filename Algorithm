@@ -1,0 +1,27 @@
+user input hill_type normal or large
+user input speed as a float
+define height, points per meter, and par as 0
+
+% calculate distance for both
+if hill_type is large
+  then height == 70, points_per_meter == 1.8, par == 120
+  time_air = sqrt((2*height)/9.8)
+  distance = speed * time_air
+  points_earned = 60 + (distance - par)*points_per_meter
+else
+  then height = 46, points_per_meter == 2, par == 90
+  time_air = sqrt((2*height/9.8))
+  distance = speed * time_air
+  points_earned = 60 + (distance - par)*points_per_meter
+
+
+print distance and points_earned
+
+if points_earned <= 61
+  print "Great job for doing better than par!"
+elif points_earned < 10
+  print "What happened??"
+otherwise
+  print "Sorry you didn’t go very far"
+
+
